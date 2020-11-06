@@ -17,11 +17,11 @@ class UserViewSet(viewsets.ModelViewSet):
     # permission_classes = permissions.IsAuthenticated
 
 
-    # def Post(self,request,format=None):
-    #     if request.method == 'POST':
+    # def post(self,request,format=None):
     #         user_data = JSONParser().parse(request)
-    #         user_serializer = UserSerializer(data=user_data)
+    #         user_serializer = UserSerializer(data=user_data, contex={'request':request})
     #         if user_serializer.is_valid():
     #             user_serializer.save()
     #             return JsonResponse(user_serializer.data, status=status.HTTP_201_CREATED) 
     #         return JsonResponse(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        
