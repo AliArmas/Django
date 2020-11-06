@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'lt%g7s=^4+7-lm%)8n9#tjh%&yaqv629rsj%gkeu@=1ymk75vg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,16 +44,17 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
 ]
+ 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
-         'rest_framework.permissions.IsAdminUser'
-    ],
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-       'rest_framework.authentication.TokenAuthentication',
-    ),
+    #'DEFAULT_PERMISSION_CLASSES': [
+     #   'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+      #   'rest_framework.permissions.IsAdminUser'
+    #],
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #    'rest_framework.authentication.TokenAuthentication',
+    # ),
 }
 
 MIDDLEWARE = [
@@ -67,6 +68,11 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 ]
+
+# CORS_ORIGIN_WITHELIST={
+#     'http://localhost:4200'
+#     'http://127.0.0.1:4200'
+# }
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -99,7 +105,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD' : 'Qwerty123*',
         'HOST' : 'localhost',
-        'PORT' : ''
+        'PORT' : '3306'
     }
 }
 

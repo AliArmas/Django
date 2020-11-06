@@ -6,7 +6,7 @@ from models.user.views import UserViewSet
 from models.product.views import ProductViewSet
 
 router = DefaultRouter()
-router.register('user',UserViewSet)
+router.register('users',UserViewSet)
 router.register('products',ProductViewSet)
 
 urlpatterns = [
